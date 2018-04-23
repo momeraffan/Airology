@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #151515;
+}
+
+/* Header/Blog Title */
+header {
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    background: black;
+}
+
+header h1 {
+    font-size: 30px;
+	color: #F8C471;
+	font-family: "Lucida Calligraphy";
+}
+
+/* Style the top navigation bar */
+nav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+    float: left;
+    width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+	color: black;
+	font-weight: bold;
+	font-family: "Lucida Calligraphy";
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+	height: auto;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: #333;
+    padding: 20px;
+    margin-top: 20px;
+	color: #F8C471;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #ddd;
+    margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+	nav a {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+nav a:link{
+	float: left;
+	color: #F8C471;
+	text-decoration: none;
+	font-family: "Lucida Calligraphy";
+	overflow: hidden;
+	transition: 0.4s;
+	padding: 14px 16px;
+	border-top: 2px;
+	border-top-style: solid;
+	border-top-color: #F8C471;
+	border-bottom: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #F8C471;
+}
+
+
+nav a:visited{
+	color: #F8C471;
+	text-decoration: none;
+	font-family: "Lucida Calligraphy";
+	overflow: hidden;
+	transition: 0.4s;
+	padding: 14px 16px;
+	border-top: 2px;
+	border-top-style: solid;
+	border-top-color: #F8C471;
+	border-bottom: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #F8C471;
+	
+}
+
+nav a:hover{
+	color: black;
+	background-color: #F8C471;
+	font-family: "Lucida Calligraphy";
+	overflow: hidden;
+	transition: 0.4s;
+	padding: 14px 16px;
+	border-top: 2px;
+	border-top-style: solid;
+	border-top-color: #F8C471;
+	border-bottom: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #F8C471;
+}
+
+.card a{
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	
+}
+
+.card aside{
+	padding: 20px 5px 0px 5px;
+}
+
+.card h2, h3{
+	font-family: "Lucida Calligraphy";
+}
+
+#logo{
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    color: white;
+    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    50% {-webkit-filter: drop-shadow(5px 5px 5px #E0B70D);
+  filter: drop-shadow(5px 5px 5px #9A7100);}
+}
+
+@keyframes mymove {
+    50% {-webkit-filter: drop-shadow(5px 5px 5px #E0B70D);
+  filter: drop-shadow(5px 5px 5px #9A7100);}
+}
+
+.responsiveimages{
+	width:100%;
+	height:auto;
+}
