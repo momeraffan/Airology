@@ -1,35 +1,29 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<script src="async.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			window.onload = function(){loadlinks();}
-		</script>
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<header>
-		<table>
-		<tr>
-			<td>
-				<img id="logo" src="air.png" alt="Airology">
-			</td>
-			<td>
-				<h1>About<h1>
-			</td>
-		</tr>
-		</table>
-		<header>
-		
-		<nav>
-			<section id="navi"></section>
-			<a href="#" onClick="pagename()" style="float:right">Sign in</a>
-		</nav>
-		
-		<article class="card">
-			 <h2>What Airology is...</h2>
-			 <img src="DSC_0758.jpg" class="responsiveimages"></img>
-			  <section class="fakeimg" style="height:200px;">Airology is a brand launched by 'Nadir Magsi' - a respected faculty 
+<head>
+	<link rel="stylesheet" href="style.css">
+	<script src="async.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		window.onload = function(){loadlinks();}
+	</script>
+</head>
+<body>
+
+<header>
+  <img id="logo" src="air.png" alt="Airology"></img>
+  <h1>...ABOUT US...</h1>
+</header>
+
+<nav>
+  <section id="navi"></section>
+  <a href="#" style="float:right">Sign</a>
+</nav>
+
+<article class="row">
+  <section class="card">
+      <h2>What is Airology?</h2>
+	  <img src="DSC_0758.jpg" alt="Reload pic" class="responsiveimages"></img>
+      <section class="fakeimg" style="height:200px;">Airology is a brand launched by 'Nadir Magsi' - a respected faculty 
 															member of Air University Multan - represents a platform that
 															enables personal and professional growth of individuals
 															through a series of well structured and organized sessions of
@@ -37,33 +31,27 @@
 															not limit the scope of ones perspective by imposing a restriction
 															by filtering out particular topics, instead, the platform aims to
 															target all the possible subjects one might imagine worthy to be
-															pondered upon.<br>						
-			  </section>
-			  <aside>Some text..</aside>
-		</article>
+															pondered upon.
+	  </section>
+    </section>
+</article>
 
-		<footer>
-		  <h2>Got something to say?</h2>
-		  <section class="card">
-		  <h4>Leave a comment:</h4>
-			  <section class="fakeimg">
-			  <center>
-			  <table>
-				<tr>
-					<td>
-						<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Enter text here..."> </textarea>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="submit" name="submit">
-					</td>
-				</tr>
-			  </table>
-			  </center>
-			  </section>
-			</section>
-		</footer>
+<footer>
+	<section class="card">
+      <h2>Got Something to say?</h2>
+      <h5>Leave your comment here:</h5>
+      <section class="fakeimg" style="height:200px;">
+		<form action="usercommenting.php" method="POST" id="commentform">
+		<table align="center">
+			<tr><td><label>Name: </label></td><td><input type="text" placeholder="Enter your name" name="nameofcommenter"/></td></tr>
+			<tr><td><label>Email: </label></td><td><input type="" placeholder="Enter your email id" name="emailofcommenter"/></td></tr>
+			<tr><td><label>Comment: </label></td><td><textarea rows="4" cols="50" name="comment" form="commentform" placeholder="Enter your comment here..."></textarea></td></tr>
+		</table>
+			<input type="submit" name="submit" value="POST"/>
+		</form>
+	  </section>
+    </section>
+</footer>
 
-	</body>
+</body>
 </html>

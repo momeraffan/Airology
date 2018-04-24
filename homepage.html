@@ -2,47 +2,71 @@
 <html>
 <head>
 	<link rel="stylesheet" href="style.css">
+	<script src="async.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		window.onload = function(){loadlinks();}
+	</script>
 </head>
 <body>
 
 <header>
   <img id="logo" src="air.png" alt="Airology"></img>
-  <h1>My Website</h1>
+  <h1>...Beyond the BoX...</h1>
 </header>
 
 <nav>
   <section id="navi"></section>
-  <a href="#" style="float:right">Link</a>
+  <a href="#" style="float:right">Sign</a>
 </nav>
 
 <article class="row">
   <article class="leftcolumn">
     <section class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <section class="fakeimg" style="height:200px;">Image</section>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <h2>Motivational Talk</h2>
+      <h5>Monday, 24/04/2018</h5>
+      <img src="Saad.jpg" alt="reload image" class="responsiveimages"></img>
+      <p>Delaying is not always a good option.
+Usually, we are confused and lack in motivation due to which we are not able to fulfill our dreams.
+Our dreams remain desires.
+Why not make it an end and start a new life?
+Why are we not ambitious enough to fulfill our desires?
+Why can't we be motivated for long-term?
+How can you be a champion of your own dreams?
+
+Need answers?
+
+Join me on my talk at Airology 
+
+Venue: Tuesday (24-04-18) at Air University Hall (4th floor). (11:30 am)
+
+If you are interested to attend the talk, register yourself by simply sending me your name at my inbox.
+You may also register through any member of our Team.
+
+LIMITED seats available.
+Register yourself now!
+(Registration is FREE).
+#Airology #AUMC</p>
     </section>
     <section class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Sep 2, 2017</h5>
-      <section class="fakeimg" style="height:200px;">Image</section>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <h2>Influencing People: Lens of Power</h2>
+      <h5>Wednesday, 18/04/2018</h5>
+      <img src="haf.jpg" alt="reload image" class="responsiveimages"></img>
+      <p>Introducing the first talk of Airology season 1
+Let's start with power. Let's start with diversity. Let's start with how to achieve the power and how to use it </p>
     </section>
   </article>
   <article class="rightcolumn">
     <section class="card">
-      <h2>About Me</h2>
-      <section class="fakeimg" style="height:100px;">Image</section>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <h2>Notifications</h2>
+      <section class="fakeimg" style="height:100px;">update 1</section>
+	  <section class="fakeimg" style="height:100px;">update 2</section>
+	  <section class="fakeimg" style="height:100px;">update 3</section>
     </section>
     <section class="card">
-      <h3>Popular Post</h3>
-      <section class="fakeimg"><p>Image</p></section>
-      <section class="fakeimg"><p>Image</p></section>
-      <section class="fakeimg"><p>Image</p></section>
+      <h3>Articles</h3>
+      <section class="fakeimg"><p>Article 1</p></section>
+      <section class="fakeimg"><p>Article 2</p></section>
+      <section class="fakeimg"><p>Article 3</p></section>
     </section>
     <section class="card">
       <h3>Follow Me</h3>
@@ -52,7 +76,20 @@
 </article>
 
 <footer>
-  <h2>Footer</h2>
+  <section class="card">
+      <h2>Got Something to say?</h2>
+      <h5>Leave your comment here:</h5>
+      <section class="fakeimg" style="height:200px;">
+		<form action="usercommenting.php" method="POST" id="commentform">
+		<table align="center">
+			<tr><td><label>Name: </label></td><td><input type="text" placeholder="Enter your name" name="nameofcommenter"/></td></tr>
+			<tr><td><label>Email: </label></td><td><input type="" placeholder="Enter your email id" name="emailofcommenter"/></td></tr>
+			<tr><td><label>Comment: </label></td><td><textarea rows="4" cols="50" name="comment" form="commentform" placeholder="Enter your comment here..."></textarea></td></tr>
+		</table>
+			<input type="submit" name="submit" value="POST"/>
+		</form>
+	  </section>
+    </section>
 </footer>
 
 </body>
