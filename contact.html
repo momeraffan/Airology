@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<script src="async.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		window.onload = function(){loadlinks();}
+	</script>
+</head>
+<body>
+
+<header>
+  <img id="logo" src="air.png" alt="Airology"></img>
+  <h1>...ABOUT US...</h1>
+</header>
+
+<nav>
+  <section id="navi"></section>
+  <a href="#" style="float:right">Sign in</a>
+</nav>
+
+<article class="row">
+  <section class="card">
+      <h2>What is Airology?</h2>
+	  <img src="DSC_0758.jpg" alt="Reload pic" class="responsiveimages"></img>
+      <section class="fakeimg" style="height:200px;">Airology is a brand launched by 'Nadir Magsi' - a respected faculty 
+															member of Air University Multan - represents a platform that
+															enables personal and professional growth of individuals
+															through a series of well structured and organized sessions of
+															workshops/seminars/informal-talks/discussions. The platform does
+															not limit the scope of ones perspective by imposing a restriction
+															by filtering out particular topics, instead, the platform aims to
+															target all the possible subjects one might imagine worthy to be
+															pondered upon.
+	  </section>
+    </section>
+</article>
+
+<footer>
+	<section class="card">
+      <h2>Got Something to say?</h2>
+      <h5>Leave your comment here:</h5>
+      <section class="fakeimg" style="height:200px;">
+		<form action="usercommenting.php" method="POST" id="commentform">
+		<table align="center">
+			<tr><td><label>Name: </label></td><td><input type="text" placeholder="Enter your name" name="nameofcommenter"/></td></tr>
+			<tr><td><label>Email: </label></td><td><input type="" placeholder="Enter your email id" name="emailofcommenter"/></td></tr>
+			<tr><td><label>Comment: </label></td><td><textarea rows="4" cols="50" name="comment" form="commentform" placeholder="Enter your comment here..."></textarea></td></tr>
+		</table>
+			<input type="submit" name="submit" value="POST"/>
+		</form>
+	  </section>
+    </section>
+		<section class="card">
+		<a href="https://www.facebook.com/Airology-183001535670795/">
+			<img src="fb.png" alt="reload image" height="115px" width="100px"></img>
+		</a>
+		<a href="youtube.com">
+			<img src="youtube.png" alt="reload image" height="115px" width="100px"></img>
+		</a>
+		<a href="#">
+			<img src="Linkedin.png" alt="reload image" height="90px" width="90px"></img>
+		</a>
+	</section>
+	<section>
+		All rights reserved.
+	</section>
+</footer>
+
+</body>
+</html>

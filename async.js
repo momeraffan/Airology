@@ -1,5 +1,4 @@
 function loadlinks(){
-			// code for IE7+, Firefox, Chrome, Opera, Safari
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
@@ -7,5 +6,38 @@ function loadlinks(){
 				}
 			};
 			xmlhttp.open("GET","nav.php",true);
+			xmlhttp.send();
+		}
+
+function homepageleftcolumn(){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("navi").innerHTML = this.responseText;
+				}
+			};
+			xmlhttp.open("GET","left.php",true);
+			xmlhttp.send();
+		}
+		
+function homepagerightcolumn(){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("navi").innerHTML = this.responseText;
+				}
+			};
+			xmlhttp.open("GET","right.php",true);
+			xmlhttp.send();
+		}
+		
+function aboutpagecontent(){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("navi").innerHTML = this.responseText;
+				}
+			};
+			xmlhttp.open("GET","about.pshp",true);
 			xmlhttp.send();
 		}
