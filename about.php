@@ -8,11 +8,11 @@
 	{
 		echo '<script>alert("Database connection error: "'.$conn->connect_error.')<script>';
 	}
-	$sql="SELECT * FROM menustrip";
+	$sql="SELECT * FROM about";
 	$result=$conn->query($sql);
 	while($row=$result->fetch_assoc())
 	{
-		echo '<a href="'.$row["link"].'" onclick="pagename() id="'.$row["id"].'">'.$row["name"].'</a>';
+		echo '<section class="card"></h2>'.$row["title"].'</h2><img class="responsiveimages" alt="Picture not loaded">'.$row["picture"].'</img><section class="fakeimg" style="height:200px">'.$row["description"].'</section></section>';
 	}
 	mysqli_close($conn);
   ?>

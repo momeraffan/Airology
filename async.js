@@ -35,9 +35,15 @@ function aboutpagecontent(){
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					document.getElementById("navi").innerHTML = this.responseText;
+					document.getElementById("aboutf").innerHTML = this.responseText;
 				}
 			};
 			xmlhttp.open("GET","about.pshp",true);
 			xmlhttp.send();
 		}
+		
+function snackbarr() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}

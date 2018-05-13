@@ -7,40 +7,6 @@
 	<script type="text/javascript">
 		window.onload = function(){loadlinks();}
 	</script>
-	<style>
-		.fa {
-		padding: 20px;
-		font-size: 30px;
-		width: auto;
-		text-align: center;
-		text-decoration: none;
-		border-radius: 50%;
-		}
-
-		.fa:hover {
-			opacity: 0.7;
-		}
-
-		.fa-facebook {
-		  background: #3B5998;
-		  color: white;
-		}
-
-		.fa-linkedin {
-		  background: #007bb5;
-		  color: white;
-		}
-
-		.fa-youtube {
-		  background: #bb0000;
-		  color: white;
-		}
-
-		.fa-instagram {
-		  background: #125688;
-		  color: white;
-		}
-	</style>
 </head>
 <body>
 
@@ -51,7 +17,7 @@
 
 <nav>
   <section id="navi"></section>
-  <a href="login.html" style="float:right">Sign in</a>
+  <a href="login.php" style="float:right">Sign in</a>
 </nav>
 <main>
 <section class="row">
@@ -114,18 +80,41 @@
   <section class="card">
       <h2>Got Something to say?</h2>
       <h5>Leave your comment here:</h5>
-      <section class="fakeimg" style="height:200px; overflow-x:auto;">
-		<form action="usercommenting.php" method="POST" id="commentform">
-		<table align="center">
-			<tr><td><label>Name: </label></td><td><input type="text" placeholder="Enter your name" name="nameofcommenter"/></td></tr>
-			<tr><td><label>Email: </label></td><td><input type="" placeholder="Enter your email id" name="emailofcommenter"/></td></tr>
-			<tr><td><label>Comment: </label></td><td><textarea rows="4" cols="50" name="comment" form="commentform" placeholder="Enter your comment here..."></textarea></td></tr>
-		</table>
-			<input type="submit" name="submit" value="POST"/>
-		</form>
+      <section class="fakeimg">
+			<form action="usercommenting.php" method="POST" id="commentform">
+			<table align="center">
+				<tr>
+					<td>
+						<label>Name: </label>
+					</td>
+					<td>
+						<input type="text" placeholder="Enter your name" name="nameofcommenter"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Email: </label>
+					</td>
+					<td>
+						<input type="text" placeholder="Enter your email id" name="emailofcommenter"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Comment: </label>
+					</td>
+					<td>
+						<textarea rows="4" cols="50" name="comment" form="commentform" placeholder="Enter your comment here..."></textarea>
+					</td>
+				</tr>
+			</table>
+							<input type="submit" name="submit" value="POST"/>
+			</form>
+		</section>
+		<article id="snackbar">Comment posted!<br>We'll get back to you soon...</article>
 	  </section>
 		<section class="card">
-		<a href="#" class="fa fa-facebook"></a>
+		<a href="https://www.facebook.com/Airology-183001535670795/" class="fa fa-facebook"></a>
 		<a href="#" class="fa fa-instagram"></a>
 		<a href="#" class="fa fa-linkedin"></a>
 		<a href="#" class="fa fa-youtube"></a>
