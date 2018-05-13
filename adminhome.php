@@ -32,7 +32,7 @@
 					<br><br><br><br>
 					<a href="#" class="block">Edit Services Page</a>
 					<br><br><br><br>
-					<a href="#" class="block">Edit Admins</a>
+					<a href="editadmins.php" class="block">Edit Admins</a>
 					<br><br><br><br>';
 			}
 			else

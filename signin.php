@@ -25,18 +25,18 @@
 			$result=$conn->query($qry);
 			while($row=$result->fetch_assoc())
 			{
-				if($username==$row["username"] and $password==$row["password"])
+				if(($username == $row["username"]) and ($password == $row["password"]))
 				{
 					$_SESSION['adminid'] = $row["id"];
 					echo '<script>alert("User successfully logged in!");</script>';
 					echo "<script>location.href = 'adminhome.php'</script>";
 				}
-				else
+			}
+			if(($username != $row["username"]) or ($password != $row["password"]))
 				{
 					echo '<script>alert("User login unsuccessful! Try again...");</script>';
 					echo "<script>location.href = 'login.php'</script>";
 				}
-			}
 			
 		}
 	}

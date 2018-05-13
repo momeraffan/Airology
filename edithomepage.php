@@ -37,6 +37,13 @@
 		<a href="signout.php" style="float:right">Sign Out</a>
 		</section>
 	</nav>
-	<footer></footer>
+	<footer>Want more customization?
+		<br>
+		Contact the developer:
+		Muhammad Omer Affan
+		+923333346061
+		omeraffan@outlook.com
+		<br>
+		*Charges will be applied for further customization*</footer>
 </body>
 </html>
