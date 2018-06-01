@@ -4,39 +4,40 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="async.js" type="text/javascript"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 	<script type="text/javascript">
-		window.onload = function(){loadlinks();}
+		window.onload = function()
+		{
+			loadlinks();
+			loadfooterlinks();
+			myMap();
+		}
+		
 	</script>
 </head>
 <body>
 
 <header>
   <img id="logo" src="air.png" alt="Airology"></img>
-  <h1>...ABOUT US...</h1>
+  <h1>...Contact US...</h1>
 </header>
 
 <nav>
   <section id="navi"></section>
   <a href="login.php" style="float:right">Sign in</a>
 </nav>
-
-<article class="row">
-  <section class="card">
-      <h2>What is Airology?</h2>
-	  <img src="DSC_0758.jpg" alt="Reload pic" class="responsiveimages"></img>
-      <section class="fakeimg" style="height:200px;">Airology is a brand launched by 'Nadir Magsi' - a respected faculty 
-															member of Air University Multan - represents a platform that
-															enables personal and professional growth of individuals
-															through a series of well structured and organized sessions of
-															workshops/seminars/informal-talks/discussions. The platform does
-															not limit the scope of ones perspective by imposing a restriction
-															by filtering out particular topics, instead, the platform aims to
-															target all the possible subjects one might imagine worthy to be
-															pondered upon.
-	  </section>
-    </section>
-</article>
-
+<main>
+	<article class="row">
+	<section class="leftcolumn">
+	  
+	</section>
+	<section class="rightcolumn">
+		<label>Phone: </label>
+		<label>Mail: </label>
+		<label> </label>
+	</section>
+	</article>
+</main>
 <footer>
   <section class="card">
       <h2>Got Something to say?</h2>
@@ -74,12 +75,7 @@
 		</section>
 		<article id="snackbar">Comment posted!<br>We'll get back to you soon...</article>
 	  </section>
-		<section class="card">
-		<a href="https://www.facebook.com/Airology-183001535670795/" class="fa fa-facebook"></a>
-		<a href="#" class="fa fa-instagram"></a>
-		<a href="#" class="fa fa-linkedin"></a>
-		<a href="#" class="fa fa-youtube"></a>
-		</section>
+		<section class="card" id="linku"></section>
     </section>
 	<section>
 		All rights reserved.

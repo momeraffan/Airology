@@ -54,7 +54,7 @@
 </head>
 <body>
 	<header>
-		<h1>Manage Account Details</h1>
+		<h1>Manage Media Links</h1>
 	</header>
 	<nav>
 		<section>
@@ -66,8 +66,8 @@
 		else
 		{
 			echo '<a href="edithomepage.php">Edit Home Page</a>
-				<a href="#">Edit Sessions Page</a>
-				<a href="editmedialinks.php">Edit Social links</a>';
+				<a href="editsessions.php">Edit Sessions Page</a>
+				<a href="editmedialinks.php">Edit Media Links</a>';
 		}
 		?>
 			<a href="signout.php" style="float:right">Sign Out</a>
@@ -76,51 +76,48 @@
 	<br>
 	<article>
 		<?php
-		if($_SESSION['adminid']==1)
-		{
-			echo '<button class="accordion">View all admins</button>
-				<section class="panel">
-				<p>The following people have acccess as admins:</p>';
+			echo '<button class="accordion">View all media links</button>
+				<section class="panel">';
 			$dbserver="localhost";
 			$dbusername="root";
 			$dbpassword="";
 			$dbname="cms";
 			$conn= new mysqli($dbserver, $dbusername, $dbpassword, $dbname);
-			$qry = 'SELECT * FROM adminpeople';
+			$qry = 'SELECT * FROM footer';
 			$result = $conn->query($qry);
-			echo "<table><tr><th>Admin ID</th><th>Admin username</th></tr>";
+			echo "<table><tr><th>Admin ID</th><th>ID</th><th>Platform</th><th>Link</th></tr>";
 			if ($result->num_rows > 0)
 			{
 				while($row=$result->fetch_assoc())
 				{
-					echo "<tr><td>".$row["id"]."</td><td>".$row["username"]."</td></tr>";
+					echo "<tr><td>".$row["adminid"]."</td><td>".$row["id"]."</td><td>".$row["sitename"]."</td><td>".$row["link"]."</td></tr>";
 				}
 				echo "</table>";
 			}
 			mysqli_close($conn);
 			echo '</section>
-				<button class="accordion">Add a new admin</button>
+				<button class="accordion">Add a new link</button>
 				<section class="panel">
 				<form method="POST" action="">
 					<br>
-					<label>Username: </label><input type="text" placeholder="Enter username here" name="username"></input>
-					<label>Password: </label><input type="text" placeholder="Enter password here" name="password"></input>
+					<label>Username: </label><input type="text" placeholder="Enter platform name here" name="sitename"></input>
+					<label>Password: </label><input type="text" placeholder="Enter link here" name="link"></input>
 					<input type="submit" name="submit" value="Add"></input>
 				</form>
 				<br>';
 			if(isset($_POST["submit"]))
 			{
-				$username = $_POST["username"];
-				$password = $_POST["password"];
+				$sitename = $_POST["sitename"];
+				$link = $_POST["link"];
 				$dbserver="localhost";
 				$dbusername="root";
 				$dbpassword="";
 				$dbname="cms";
 				$conn= new mysqli($dbserver, $dbusername, $dbpassword, $dbname);
-				$qry = "INSERT INTO adminpeople(username, password) VALUES('$username', '$password')";
+				$qry = "INSERT INTO footer(sitename, link) VALUES('$sitename', '$link')";
 				if ($conn->query($qry) === TRUE)
 				{
-					echo "<script>alert('New admin added successfully')</script>";
+					echo "<script>alert('New link added successfully')</script>";
 				} 
 				else
 				{
@@ -129,125 +126,67 @@
 				$conn->close();
 			}
 			echo '</section>
-				<button class="accordion">Change username and password</button>
+				<button class="accordion">Change link</button>
 				<section class="panel">
 					<form method="POST" action="">
 					<br>
-					<label>Username: </label><input type="text" placeholder="Enter username here" name="updateusername"></input>
-					<label>Password: </label><input type="text" placeholder="Enter password here" name="updatepassword"></input>
-					<label>Re-enter password: </label><input type="text" placeholder="Enter password here" name="comparepassword"></input>
+					<label>ID: </label><input type="text" placeholder="Enter ID here" name="updateid"></input>
+					<label>Site-name: </label><input type="text" placeholder="Enter sitename here" name="upsitename"></input>
+					<label>Link: </label><input type="text" placeholder="Enter link here" name="uplink"></input>
 					<input type="submit" name="update" value="Update"></input>
 				</form>
 				<br>';
 			if(isset($_POST["update"]))
 			{
-				$cpassword = $_POST["comparepassword"];
-				$password = $_POST["updatepassword"];
-				if($cpassword===$password)
-				{
-					$username = $_POST["updateusername"];
-					$password = $_POST["updatepassword"];
+					$uid = $_POST["updateid"];
+					$sitename = $_POST["upsitename"];
+					$ulink = $_POST['uplink'];
 					$dbserver="localhost";
 					$dbusername="root";
 					$dbpassword="";
 					$dbname="cms";
 					$conn= new mysqli($dbserver, $dbusername, $dbpassword, $dbname);
-					$qry = "UPDATE adminpeople SET username='".$username."', password='".$password."' WHERE id=".$_SESSION['adminid'];
+					$qry = "UPDATE footer SET sitename='".$sitename."', link='".$ulink."' WHERE id=".$uid;
 					if ($conn->query($qry) === TRUE)
 					{
-						echo "<script>alert('Account updated successfully')</script>";
+						echo "<script>alert('Links updated successfully')</script>";
 					} 
 					else
 					{
 						echo "<script>alert('Error: ". $conn->error."')</script>";
 					}
 					$conn->close();
-				}
-				else
-				{
-					echo '<script>alert("Passwords do not match! Retry...");</script>';
-				}
 				
 			}
 			echo '</section>
-				<button class="accordion">Delete admin</button>
+				<button class="accordion">Delete a link</button>
 				<section class="panel">
 					<form method="POST" action="">
 					<br>
-					<label>Admin ID: </label><input type="text" placeholder="Enter Admin Id here to delete admin" name="delid"></input>
+					<label>Admin ID: </label><input type="text" placeholder="Enter link Id here to delete link" name="delid"></input>
 					<input type="submit" name="delete" value="Delete"></input>
 				</form>
 				<br>';
 			if(isset($_POST["delete"]))
 			{
-				$delid = $_POST["delid"];
-				if($delid==1)
-				{
-					echo "<script>alert('Cannot delete Senior Admin (i.e. yourself)')</script>";
-				}
-				else
-				{
+					$delid = $_POST["delid"];
 					$dbserver="localhost";
 					$dbusername="root";
 					$dbpassword="";
 					$dbname="cms";
 					$conn= new mysqli($dbserver, $dbusername, $dbpassword, $dbname);
-					$qry = "DELETE FROM adminpeople WHERE id=".$delid;
+					$qry = "DELETE FROM footer WHERE id=".$delid;
 					if ($conn->query($qry) === TRUE)
 					{
-						echo "<script>alert('Admin deleted successfully')</script>";
+						echo "<script>alert('link deleted successfully')</script>";
 					} 
 					else
 					{
 						echo "<script>alert('Error: ". $conn->error."')</script>";
 					}
 					$conn->close();
-				}
 			}
 			echo '</section>';
-		}
-		else
-		{
-			echo '</section>
-				<button class="accordion">Change Password</button>
-				<section class="panel">
-					<form method="POST" action="">
-					<br>
-					<label>Password: </label><input type="text" placeholder="Enter password here" name="updatepassword"></input>
-					<label>Re-enter password: </label><input type="text" placeholder="Enter password here" name="comparepassword"></input>
-					<input type="submit" name="update" value="Update"></input>
-				</form>
-				<br>';
-			if(isset($_POST["update"]))
-			{
-				$cpassword = $_POST["comparepassword"];
-				$password = $_POST["updatepassword"];
-				if($cpassword===$password)
-				{
-					$dbserver="localhost";
-					$dbusername="root";
-					$dbpassword="";
-					$dbname="cms";
-					$conn= new mysqli($dbserver, $dbusername, $dbpassword, $dbname);
-					$qry = "UPDATE adminpeople SET password='".$password."' WHERE id=".$_SESSION['adminid'];
-					if ($conn->query($qry) === TRUE)
-					{
-						echo "<script>alert('Account updated successfully')</script>";
-					} 
-					else
-					{
-						echo "<script>alert('Error: ". $conn->error."')</script>";
-					}
-					$conn->close();
-				}
-				else
-				{
-					echo '<script>alert("Passwords do not match! Retry...");</script>';
-				}
-				
-			}
-			echo '</section>';
-		}
 		?>
 		<script type="text/javascript">
 		var acc = document.getElementsByClassName("accordion");

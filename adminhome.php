@@ -22,24 +22,30 @@
 			{
 				echo '<a href="edithomepage.php" class="block">Edit Home Page</a>
 					<br><br><br><br>
-					<a href="#" class="block">Edit About Page</a>
+					<a href="editabout.php" class="block">Edit About Page</a>
 					<br><br><br><br>
 					<a href="#" class="block">Edit Vision Page</a>
 					<br><br><br><br>
-					<a href="#" class="block">Edit Sessions Page</a>
+					<a href="editsessions.php" class="block">Edit Sessions Page</a>
 					<br><br><br><br>
 					<a href="#" class="block">Edit Contact Page</a>
 					<br><br><br><br>
 					<a href="#" class="block">Edit Services Page</a>
 					<br><br><br><br>
-					<a href="editadmins.php" class="block">Edit Admins</a>
+					<a href="editmedialinks.php" class="block">Edit Social-Media Links</a>
+					<br><br><br><br>
+					<a href="editadmins.php" class="block">Edit Accounts & Admins</a>
 					<br><br><br><br>';
 			}
 			else
 			{
 				echo '<a href="edithomepage.php" class="block">Edit Home Page</a>
 					<br><br><br><br>
-					<a href="#" class="block">Edit Sessions Page</a>
+					<a href="editsessions.php" class="block">Edit Sessions Page</a>
+					<br><br><br><br>
+					<a href="editfooter.php" class="block">Edit Social-Media Links</a>
+					<br><br><br><br>
+					<a href="editadmins.php" class="block">Edit my Account</a>
 					<br><br><br><br>';
 			}
 		?>

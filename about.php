@@ -12,7 +12,12 @@
 	$result=$conn->query($sql);
 	while($row=$result->fetch_assoc())
 	{
-		echo '<section class="card"></h2>'.$row["title"].'</h2><img class="responsiveimages" alt="Picture not loaded">'.$row["picture"].'</img><section class="fakeimg" style="height:200px">'.$row["description"].'</section></section>';
+		echo '<section class="card">
+			<h2>'.$row["title"].'</h2>
+			<img src="data:image/jpeg;base64,'.base64_encode( $row["picture"] ).'" class="responsiveimages" alt="Picture not loaded"></img>
+			<section class="fakeimg" style="minheight:200px">
+			<p>'.$row["description"].'</p>
+			</section></section>';
 	}
 	mysqli_close($conn);
   ?>
